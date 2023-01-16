@@ -1,0 +1,42 @@
+pandas serve para excel, csv etc mas outras bibliotecas sao recomendadas para outros arquivos
+
+em analise de dados elimine informações inuteis, que nao ajudam (informacao que nao te ajuda te atrapalha)
+
+tabela.drop("nome da coluna", axis = 1(coluna) OU 0 (linha)) APAGA ITEM DE TABELA
+
+se tiver duas colunas com mesmo nome o pandas muda botando decimal
+
+tabela.drop(["coluna 1", "coluna 2", "coluna 3"]) para colocar varias colunas
+
+a maior parte do trabalho de analise de dados eh garantindo que esteja tudo certo para analisar, a analise em si é relativamente rapida
+
+tabela.info() faz um resumo mostrndo quantas colunas tem e quantos valores nulos e tipo
+
+tipos: object(texto) float(decimal) int(numero inteiro)
+
+errors = "ignore" ou "coerce"(viram NaN) "raise" (notifica)
+
+tirar valores vazios pois nao te deixam chegar a uma conclusao
+
+tabela.dropna(how = "all"  (so tem valor vazio) OU "any" (no minimo 1 valo vazio), axis = ) remove valores vazios
+
+churm = cancelado ou n
+
+tabela["churn"].value_counts()) mostra quantos valores sao sim e nao
+
+value_counts(normalize=True) mostra em porcentagem (decimal)
+
+print(tabela["Churn"].value_counts(normalize=True).map("{:.1%}".format)) decimal bonito
+
+import plotly.express serve para graficos
+
+coluna = "TipoContrato"
+grafico = px.histogram(tabela, x = coluna, color = "Churn", text_auto = True)
+
+grafico.show()
+
+em analise vc esta buscando informacoes que saltam os olhos, proporcao
+
+
+
+
